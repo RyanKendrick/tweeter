@@ -8,6 +8,8 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+  /* sets all font to roboto and downgrades to sans if browser must */
+  font-family: Roboto Condensed, sans-serif;
 }
 
 /*
