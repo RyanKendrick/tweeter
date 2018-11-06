@@ -12,12 +12,14 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body id='body'>
@@ -33,11 +35,27 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method='POST' action='/tweets'>
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
+
+          <textarea class="tweet-form" name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
        </section>
+       <article class="tweet-container">
+
+          <header>
+            <img class="avatar" src="/images/DOC.png">
+            <div class="tweet-name">Bill Fields</div>
+            <div class="tweet-handle">@MrFields</div>
+
+          </header>
+          <div class="tweet-content">Tweet Tweet Tweet
+          </div>
+          <footer class="tweet-footer">
+          <div class='days-ago'>10 days ago</div>
+          </footer>
+
+       </article>
     </main>
 
   </body>
