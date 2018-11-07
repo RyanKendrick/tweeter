@@ -112,6 +112,15 @@ const createTweetElement = function (data) {
   return tweet;
 };
 
+
+
+      // $(document).ready(function() {
+      //   $( "button" ).click(function() {
+      //     $( ".new-tweet" ).slideToggle( "slow" );
+      //   });
+      // });
+
+
 const rendertweets = function (tweets) {
   for (const tweet of tweets) {
     const newTweet = createTweetElement(tweet);
@@ -174,4 +183,15 @@ $(document).ready(() => {
 
   loadTweets();
   // conditional closing bracket
+});
+
+
+// function that make new tweet container slide down
+// when the compose button is clicked
+// and selects the form field automatically
+$(document).ready(function() {
+  $( ".compose" ).click(function() {
+    $( ".new-tweet" ).slideDown( "slow" );
+    $(".new-tweet textarea").focus();
+  });
 });

@@ -20,3 +20,31 @@
   line-height: 250%;
   float: left;
 }
+
+#nav-bar .compose {
+float: right;
+margin: 10px;
+background-color: #ebfafa;
+color: #00a087;
+height: 60px;
+width: 100px;
+border-style: solid;
+border-color: black;
+border-width: 2px;
+border-radius: 5px;
+font-size: 130%;
+}
+
+#nav-bar .compose:hover {
+float: right;
+margin: 10px;
+background-color: white;
+color: black;
+height: 60px;
+width: 100px;
+border-style: solid;
+border-color: black;
+border-width: 2px;
+border-radius: 5px;
+font-size: 130%;
+}
