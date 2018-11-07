@@ -5,94 +5,93 @@
  */
 
 
-
- const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": {
-      "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-      "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-      "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
+const tweetData = {
+  user: {
+    name: 'Newton',
+    avatars: {
+      small: 'https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png',
+      regular: 'https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png',
+      large: 'https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png',
     },
-    "handle": "@SirIsaac"
+    handle: '@SirIsaac',
   },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
+  content: {
+    text: 'If I have seen further it is by standing on the shoulders of giants',
   },
-  "created_at": 1461116232227
-}
+  created_at: 1461116232227,
+};
 
 // Fake data taken from tweets.json
 const data = [
   {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
+    user: {
+      name: 'Newton',
+      avatars: {
+        small: 'https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png',
+        regular: 'https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png',
+        large: 'https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png',
       },
-      "handle": "@SirIsaac"
+      handle: '@SirIsaac',
     },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+    content: {
+      text: 'If I have seen further it is by standing on the shoulders of giants',
     },
-    "created_at": 1461116232227
+    created_at: 1461116232227,
   },
   {
-    "user": {
-      "name": "Descartes",
-      "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
+    user: {
+      name: 'Descartes',
+      avatars: {
+        small: 'https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png',
+        regular: 'https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png',
+        large: 'https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png',
       },
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
+      handle: '@rd',
     },
-    "created_at": 1461113959088
+    content: {
+      text: 'Je pense , donc je suis',
+    },
+    created_at: 1461113959088,
   },
   {
-    "user": {
-      "name": "Johann von Goethe",
-      "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
+    user: {
+      name: 'Johann von Goethe',
+      avatars: {
+        small: 'https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png',
+        regular: 'https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png',
+        large: 'https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png',
       },
-      "handle": "@johann49"
+      handle: '@johann49',
     },
-    "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
+    content: {
+      text: 'Es ist nichts schrecklicher als eine tätige Unwissenheit.',
     },
-    "created_at": 1461113796368
-  }
+    created_at: 1461113796368,
+  },
 ];
 
- let createTweetElement = function(data) {
-
-  let flagIconPath = "/images/flag.png";
-  let heartIconPath = "/images/heart.png";
-  let shareIconPath = "/images/share.png";
-  let tweet = $("<article>").addClass("tweet");
-  let header = $("<header>");
-  let tweetName = $("<div>").addClass("tweet-name");
+const createTweetElement = function (data) {
+  const flagIconPath = '/images/flag.png';
+  const heartIconPath = '/images/heart.png';
+  const shareIconPath = '/images/share.png';
+  const tweet = $('<article>').addClass('tweet');
+  const header = $('<header>');
+  const tweetName = $('<div>').addClass('tweet-name');
 
   tweetName.text(data.user.name);
 
-  let tweetHandle = $("<div>").addClass("tweet-handle");
-  let tweetAvatar = $("<img>").addClass("avatar");
+  const tweetHandle = $('<div>').addClass('tweet-handle');
+  const tweetAvatar = $('<img>').addClass('avatar');
 
-  tweetAvatar.attr("src", data.user.avatars.regular);
+  tweetAvatar.attr('src', data.user.avatars.regular);
 
-  let content = $("<div>").addClass("tweet-content");
-  let flagIcon = $("<img>").addClass("flag").attr("src", flagIconPath);
-  let heartIcon = $("<img>").addClass("heart").attr("src", heartIconPath);
-  let shareIcon = $("<img>").addClass("share").attr("src", shareIconPath);
-  let footer = $("<footer>").addClass("tweet-footer");
-  let icons = $("<div>").addClass("icons");
-  let tweetDate = $("<div>").addClass("days-ago");
+  const content = $('<div>').addClass('tweet-content');
+  const flagIcon = $('<img>').addClass('flag').attr('src', flagIconPath);
+  const heartIcon = $('<img>').addClass('heart').attr('src', heartIconPath);
+  const shareIcon = $('<img>').addClass('share').attr('src', shareIconPath);
+  const footer = $('<footer>').addClass('tweet-footer');
+  const icons = $('<div>').addClass('icons');
+  const tweetDate = $('<div>').addClass('days-ago');
 
   tweetDate.text(data.created_at);
   content.text(data.content.text);
@@ -111,21 +110,15 @@ const data = [
   tweet.append(footer);
 
   return tweet;
-
 };
 
-let rendertweets = function(tweets) {
-  for (let tweet of tweets) {
-
-    let newTweet = createTweetElement(tweet);
+const rendertweets = function (tweets) {
+  for (const tweet of tweets) {
+    const newTweet = createTweetElement(tweet);
     console.log(newTweet);
     $('.tweet-container').append(newTweet);
-
   }
 };
-
-
-
 
 
 // var $tweet = createTweetElement(tweetData);
@@ -134,40 +127,51 @@ let rendertweets = function(tweets) {
 // console.log($tweet); // to see what it looks like
 // $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 // createTweetElement(tweetData);
-$(document).ready(function() {
+$(document).ready(() => {
+  // JQuery/AJAX GET request to /tweets and recieve array of tweets as JSON
+  const loadTweets = function () {
+    $.ajax('/tweets', {
+      method: 'GET',
+      datatype: 'json',
+    })
 
-      // JQuery/AJAX GET request to /tweets and recieve array of tweets as JSON
-      let loadTweets = function() {
-        $.ajax('/tweets', { method: 'GET',
-           datatype: "json",
-          })
+      .then((tweetArr) => {
+        console.log('loadTweets success');
+        rendertweets(tweetArr);
+      });
+  };
 
-        .then(function(tweetArr) {
-          console.log('loadTweets success');
-          rendertweets(tweetArr);
-        })
-      };
-      // AJAX request makes the default POST request ine xpress server happen in the background
-      // while the page remains visible to the user and there is no redirection
-      var $formSubmit = $('.tweet-request');
-      $formSubmit.on('submit', function (event) {
-        console.log('Button clicked, performing ajax call...');
-        event.preventDefault();
-        // .serialize() turns the data (e.g. field1=value1&field2=value2&field3=value3...
-        // into a string that can be utilized in the AJAX request
-        var dataRequest = $(".tweet-request").serialize();
-        $.ajax('/tweets', { method: 'POST',
-         data: dataRequest })
 
-        .then(function () {
+  // AJAX request makes the default POST request ine xpress server happen in the background
+  // while the page remains visible to the user and there is no redirection
+  const $formSubmit = $('.tweet-request');
+  $formSubmit.on('submit', (event) => {
+    console.log('Button clicked, performing ajax call...');
+    event.preventDefault();
+
+    const charCount = $('.tweet-form').val().length;
+    // conditional statement sends alerts if there is no tweet
+    // or if tweet is too long (> 140);
+    if (charCount > 140) {
+      alert('Tweet is too long!');
+    } else if (charCount === 0) {
+      alert('Please enter a tweet!');
+    } else {
+      // .serialize() turns the data (e.g. field1=value1&field2=value2&field3=value3...
+      // into a string that can be utilized in the AJAX request
+      const dataRequest = $('.tweet-request').serialize();
+      $.ajax('/tweets', {
+        method: 'POST',
+        data: dataRequest,
+      })
+
+        .then(() => {
           console.log('Success');
           loadTweets();
         });
+    }
+  });
 
-
-    });
-
-      loadTweets();
+  loadTweets();
+  // conditional closing bracket
 });
-
-
