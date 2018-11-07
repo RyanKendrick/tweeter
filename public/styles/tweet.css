@@ -1,4 +1,4 @@
-#body .tweet-container {
+body .tweet {
   border-width: 10px;
   border-radius: 5px;
   border-style: solid;
@@ -7,21 +7,40 @@
   margin: 30px;
 }
 
-#body .tweet-container:hover {
-  border-width: 10px;
+/* HOVER STATES */
+
+.tweet:hover {
+ /* border-width: 10px;
   border-radius: 5px;
   border-style: solid;
-  border-width: 1px;
+  border-width: 1px;*/
   border-color: #000000;
-  margin: 30px;
+  /*margin: 30px;*/
 }
 
-#body .tweet-container:hover .tweet-handle {
+.tweet:hover .tweet-handle {
   color: #666666;
 }
 
-#body .tweet-container:hover .tweet-name {
+.tweet:hover .tweet-name {
   color: #000000;
+}
+
+.tweet:hover .icons {
+  visibility: visible;
+}
+
+.tweet .icons {
+  visibility: hidden;
+  float: right;
+  padding: 10px;
+}
+
+.icons .flag,
+.icons .share,
+.icons .heart {
+  height: 20px;
+  width: 20px;
 }
 
 #body .tweet-container header {
@@ -31,15 +50,15 @@
 }
 
 
-#body .tweet-handle {
+.tweet .tweet-handle {
   float: right;
   padding-top: 15px;
   padding-right: 7px;
   color: #a6a6a6;
 }
 
-#body .tweet-name {
-  padding-top: 4px;
+.tweet .tweet-name {
+  padding-top: 8px;
   padding-left: 4px;
   float: left;
   font-weight: bold;
@@ -49,32 +68,37 @@
 
 
 
-#body .avatar {
-  height: 50px;
-  width: 50px;
+.tweet .avatar {
+  height: 60px;
+  width: 60px;
   float: left;
-  padding: 5px;
-  border-radius: 10px;
+  padding: 7px;
+  border-radius: 13px;
 }
 
-#body .tweet-content {
+.tweet .tweet-content {
   height: 100px;
   vertical-align: middle;
   font-size: 20px;
   padding: 7px;
 }
 
-#body .tweet-footer {
+.tweet .tweet-footer {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #F0F0F0;
   height: 40px;
+  width: 100%;
 }
 
-#body .days-ago {
+.tweet .days-ago {
   padding: 10px;
-
+  display: inline-block;
 }
+
+
+
+
 
 
 
