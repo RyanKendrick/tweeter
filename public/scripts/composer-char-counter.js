@@ -9,11 +9,11 @@ function updateCharacterCounter(event) {
   // if else statement checks if counter number is
   // less than 140 and if so changes its color to red
   if (remainder < 0) {
-    $(this).siblings('counter').css("color", "#FF0000");
+    $(this).siblings('.counter').css("color", "#FF0000");
   } else {
   // when backspacing, if counter goes back to MORE
   // than 140, change colour of counter back to black
-    $(this).siblings('counter').css("color", "#000000")
+    $(this).siblings('.counter').css("color", "#000000");
   }
 };
 

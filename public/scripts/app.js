@@ -71,16 +71,21 @@ const data = [
 ];
 
  let createTweetElement = function(data) {
+
   let flagIconPath = "/images/flag.png";
   let heartIconPath = "/images/heart.png";
   let shareIconPath = "/images/share.png";
   let tweet = $("<article>").addClass("tweet");
   let header = $("<header>");
   let tweetName = $("<div>").addClass("tweet-name");
+
   tweetName.text(data.user.name);
+
   let tweetHandle = $("<div>").addClass("tweet-handle");
   let tweetAvatar = $("<img>").addClass("avatar");
+
   tweetAvatar.attr("src", data.user.avatars.regular);
+
   let content = $("<div>").addClass("tweet-content");
   let flagIcon = $("<img>").addClass("flag").attr("src", flagIconPath);
   let heartIcon = $("<img>").addClass("heart").attr("src", heartIconPath);
@@ -88,9 +93,11 @@ const data = [
   let footer = $("<footer>").addClass("tweet-footer");
   let icons = $("<div>").addClass("icons");
   let tweetDate = $("<div>").addClass("days-ago");
+
   tweetDate.text(data.created_at);
   content.text(data.content.text);
   tweetHandle.text(data.user.handle);
+
   header.append(tweetAvatar);
   header.append(tweetName);
   header.append(tweetHandle);
@@ -113,8 +120,13 @@ let rendertweets = function(tweets) {
     let newTweet = createTweetElement(tweet);
     console.log(newTweet);
     $('.tweet-container').append(newTweet);
+
   }
 };
+
+
+
+
 
 // var $tweet = createTweetElement(tweetData);
 
@@ -122,6 +134,40 @@ let rendertweets = function(tweets) {
 // console.log($tweet); // to see what it looks like
 // $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 // createTweetElement(tweetData);
-$( document ).ready(function() {
-    rendertweets(data);
+$(document).ready(function() {
+
+      // JQuery/AJAX GET request to /tweets and recieve array of tweets as JSON
+      let loadTweets = function() {
+        $.ajax('/tweets', { method: 'GET',
+           datatype: "json",
+          })
+
+        .then(function(tweetArr) {
+          console.log('loadTweets success');
+          rendertweets(tweetArr);
+        })
+      };
+      // AJAX request makes the default POST request ine xpress server happen in the background
+      // while the page remains visible to the user and there is no redirection
+      var $formSubmit = $('.tweet-request');
+      $formSubmit.on('submit', function (event) {
+        console.log('Button clicked, performing ajax call...');
+        event.preventDefault();
+        // .serialize() turns the data (e.g. field1=value1&field2=value2&field3=value3...
+        // into a string that can be utilized in the AJAX request
+        var dataRequest = $(".tweet-request").serialize();
+        $.ajax('/tweets', { method: 'POST',
+         data: dataRequest })
+
+        .then(function () {
+          console.log('Success');
+          loadTweets();
+        });
+
+
+    });
+
+      loadTweets();
 });
+
+
