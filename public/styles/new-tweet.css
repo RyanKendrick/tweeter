@@ -1,4 +1,4 @@
-#body .new-tweet {
+.new-tweet {
   display: none;
   border-width: 10px;
   background-color: #F0F0F0;
@@ -9,7 +9,7 @@
   padding: 10px;
 }
 
-#body .new-tweet h2 {
+.new-tweet h2 {
   margin-top: 0px;
   margin-bottom: 0px;
   border-bottom-style: solid;
@@ -17,14 +17,14 @@
   color: #666666;
 }
 
-#body .new-tweet span {
+.new-tweet span {
   font-style: italic;
   float: right;
   padding-top: 5px;
   padding-right: 10px;
 }
 
-#body .new-tweet textarea {
+.new-tweet textarea {
   width: 100%;
   margin-top: 15px;
   padding-top: 6px;

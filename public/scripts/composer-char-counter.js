@@ -6,7 +6,7 @@ function updateCharacterCounter(event) {
   const remainder = 140 - $(this).val().length;
   $(this).siblings('.counter').text(remainder);
   // can also be written like: $('.counter').text(remainder); but using $(this).siblings('.counter') is more efficient
-  // if else statement checks if counter number is
+  // conditional statement checks if counter number is
   // less than 140 and if so changes its color to red
   if (remainder < 0) {
     $(this).siblings('.counter').css("color", "#FF0000");
@@ -18,7 +18,7 @@ function updateCharacterCounter(event) {
 };
 
 // $(".tweet-form").keyup() is event listener that fires everytime
-// a key is pressed and subtracts if deleted.
+// a key is pressed and subtracts if deleted
 $(document).ready(function() {
   $(".tweet-form").keyup(updateCharacterCounter);
 });
