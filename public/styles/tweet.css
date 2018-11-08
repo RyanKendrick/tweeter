@@ -81,6 +81,7 @@ body .tweet {
   vertical-align: middle;
   font-size: 20px;
   padding: 7px;
+  overflow-wrap: break-word;
 }
 
 .tweet .tweet-footer {

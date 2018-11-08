@@ -165,12 +165,16 @@ $(document).ready(() => {
       // jquery function makes error message slide down
       // and appends text to the container
       $('.error-container')
+        // .empty() empty's the error message container
+        // so new one can appear without old one
+        .empty()
         .slideDown('slow')
         .append('Tweet is too long!');
     } else if (charCount === 0) {
       // jquery function makes error message slide down
       // and appends text to the container
       $('.error-container')
+        .empty()
         .slideDown('slow')
         .append('Enter a tweet!');
 
