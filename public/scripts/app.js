@@ -162,10 +162,25 @@ $(document).ready(() => {
     // conditional statement sends alerts if there is no tweet
     // or if tweet is too long (> 140);
     if (charCount > 140) {
-      alert('Tweet is too long!');
+      // jquery function makes error message slide down
+      // and appends text to the container
+      $('.error-container')
+        .slideDown('slow')
+        .append('Tweet is too long!');
     } else if (charCount === 0) {
-      alert('Please enter a tweet!');
+      // jquery function makes error message slide down
+      // and appends text to the container
+      $('.error-container')
+        .slideDown('slow')
+        .append('Enter a tweet!');
+
     } else {
+      // if error container is visible upon new tweet submission
+      // and the new tweet passes the valid conditions, hide the error container
+      if (charCount > 0 && charCount < 140) {
+        $('.error-container')
+        .slideUp('slow');
+      }
       // .serialize() turns the data (e.g. field1=value1&field2=value2&field3=value3...
       // into a string that can be utilized in the AJAX request
       const dataRequest = $('.tweet-request').serialize();
