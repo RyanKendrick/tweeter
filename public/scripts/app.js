@@ -122,6 +122,9 @@ $(document).ready(() => {
       .then(() => {
         console.log('Success');
         loadTweets();
+        console.log('textarea', $(".new-tweet textarea"))
+        $(".new-tweet textarea").val('');
+        $(".counter").text("140");
       });
     }
   });
