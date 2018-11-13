@@ -79,34 +79,31 @@ $(document).ready(() => {
 
   // AJAX request makes the default POST request ine xpress server happen in the background
   // while the page remains visible to the user and there is no redirection
+  // conditional statement sends alerts if there is no tweet
+  // or if tweet is too long (> 140);
   const $formSubmit = $('.tweet-request');
   $formSubmit.on('submit', (event) => {
     console.log('Button clicked, performing ajax call...');
     event.preventDefault();
 
     const charCount = $('.tweet-form').val().length;
-    // conditional statement sends alerts if there is no tweet
-    // or if tweet is too long (> 140);
+
     if (charCount > 140) {
-      // jquery function makes error message slide down
-      // and appends text to the container
+
       $('.error-container')
-        // .empty() empty's the error message container
-        // so new one can appear without old one
         .empty()
         .slideDown('slow')
         .append('Tweet is too long!');
+
     } else if (charCount === 0) {
-      // jquery function makes error message slide down
-      // and appends text to the container
+
       $('.error-container')
         .empty()
         .slideDown('slow')
         .append('Enter a tweet!');
 
     } else {
-      // if error container is visible upon new tweet submission
-      // and the new tweet passes the valid conditions, hide the error container
+
       if (charCount > 0 && charCount < 140) {
         $('.error-container')
         .slideUp('slow');
@@ -125,6 +122,7 @@ $(document).ready(() => {
         console.log('textarea', $(".new-tweet textarea"))
         $(".new-tweet textarea").val('');
         $(".counter").text("140");
+        $( ".new-tweet" ).slideUp( "slow" );
       });
     }
   });

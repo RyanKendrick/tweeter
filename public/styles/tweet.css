@@ -10,12 +10,7 @@ body .tweet {
 /* HOVER STATES */
 
 .tweet:hover {
- /* border-width: 10px;
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 1px;*/
   border-color: #000000;
-  /*margin: 30px;*/
 }
 
 .tweet:hover .tweet-handle {
