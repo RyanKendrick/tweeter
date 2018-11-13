@@ -20,4 +20,4 @@ This repository is the starter code for the project: Students will fork and clon
 
 !["Home page"](https://github.com/RyanKendrick/tweeter/blob/master/docs/home-default.png?raw=true)
 !["Composing a tweet"](https://github.com/RyanKendrick/tweeter/blob/master/docs/enter-tweet.png?raw=true)
-!["Submitting a tweet"](https://github.com/RyanKendrick/tweeter/blob/master/docs/tweet-submission.png?raw=true)
+!["Submitting a tweet"](https://github.com/RyanKendrick/tweeter/blob/master/docs/successful-tweet.png?raw=true)
