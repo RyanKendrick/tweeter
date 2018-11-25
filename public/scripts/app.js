@@ -132,12 +132,22 @@ $(document).ready(() => {
 });
 
 
-// function that make new tweet container slide down
+// function that makes new tweet container slide down
 // when the compose button is clicked
 // and selects the form field automatically
+// or slides it back up if it is already visible
 $(document).ready(function() {
-  $( ".compose" ).click(function() {
-    $( ".new-tweet" ).slideDown( "slow" );
-    $(".new-tweet textarea").focus();
+
+  $(".compose").click(function() {
+    if ($(".new-tweet").is(':visible')) {
+      $(".new-tweet").slideUp("slow");
+    } else {
+      $(".new-tweet").slideDown("slow");
+      $(".new-tweet textarea").focus();
+    }
+
   });
+
 });
+
+
