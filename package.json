@@ -19,7 +19,8 @@
     "mongodb": "^2.2.36"
   },
   "engines": {
-    "node": "11.6.0"
+    "node": "11.6.0",
+    "npm": "6.5.0"
   },
   "devDependencies": {
     "eslint": "^5.8.0",
