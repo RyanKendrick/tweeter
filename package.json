@@ -16,7 +16,7 @@
     "event-stream": "^4.0.1",
     "express": "4.16.4",
     "md5": "^2.1.0",
-    "mongodb": "^5.0.0"
+    "mongodb": "^5.2.36"
   },
   "engines": {
     "node": "11.6.0",
